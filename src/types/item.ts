@@ -1,11 +1,7 @@
-export interface Item {
+export interface ResponseItemDTO {
   id: string;
   name: string;
   event: number;
   materialType: number;
   price: number;
-}
-
-export interface RequestItemDTO {
-    items: Item[]
 }
