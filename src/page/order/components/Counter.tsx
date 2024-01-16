@@ -7,9 +7,9 @@ interface ItemCounter {
 const Counter = ({ currentCounter }: ItemCounter) => {
   return (
     <Style.CounterContainer>
-      <Style.Text>-</Style.Text>
+      <Style.CounterButton>-</Style.CounterButton>
       <Style.Text>{currentCounter}</Style.Text>
-      <Style.Text>+</Style.Text>
+      <Style.CounterButton>+</Style.CounterButton>
     </Style.CounterContainer>
   );
 };
@@ -22,6 +22,11 @@ const Style = {
     align-items: center;
     justify-content: center;
     text-align: center;
+  `,
+  CounterButton: styled.button`
+    width: 19px;
+    height: 22px;
+    flex-shrink: 0;
   `,
   Text: styled.p`
     width: 19px;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ResponseItemDTO } from "../../../types/item";
 import Counter from "./Counter";
 import { convertToCurrency } from "../../../utils/utils";
+import Chip from "./Chip";
 
 interface ItemsProps {
   items: ResponseItemDTO[];
@@ -14,7 +15,10 @@ const Items = ({ items }: ItemsProps) => {
           <Style.ItemWrapper>
             <Style.ImageSection />
             <Style.ItemSection>
-              <Style.NameWrapper>{item.name}</Style.NameWrapper>
+              <Style.NameWrapper>
+                <p>{item.name}</p>
+                {item.event === 1 && <Chip label={"이벤트"} />}
+              </Style.NameWrapper>
               <Style.PriceWrapper>
                 <Counter currentCounter={0} />
                 <p>{`${convertToCurrency(item.price, "en-US")}원`}</p>
@@ -59,7 +63,11 @@ const Style = {
     flex-direction: column;
     justify-content: space-between;
   `,
-  NameWrapper: styled.div``,
+  NameWrapper: styled.div`
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  `,
   PriceWrapper: styled.div`
     display: flex;
     align-items: center;
