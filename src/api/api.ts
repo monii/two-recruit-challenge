@@ -8,7 +8,7 @@ const localAxios = axios.create({
 const itemApi = {
   getItems: async (): Promise<ResponseItemDTO[]> => {
     // 로딩중을 표시 하기위해서 setTimeout 사용
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     const { data } = await localAxios.get("/items");
     return data;
