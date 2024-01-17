@@ -1,3 +1,7 @@
+# :smile: 소개
+두번째 회사 입사지원 사전 과제 입니다.[원티드 입사 지원 페이지-두번째](https://www.wanted.co.kr/company/780)  
+참고 디자인은 해당 피그마에서 확인 하실 수 있습니다. [디자인](https://www.figma.com/file/hSJI4HpRvmZjm77vJfJest/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B3%BC%EC%A0%9C?node-id=4%3A1773&mode=dev)  
+요구사항 문서는 해당 Docs에서 확인 하실 수 있습니다. [요구사항 정의서](https://docs.google.com/document/d/1Wm__8XmphxBu0moQ5dm_g9NuxgaMwWjKRqrhBSch0zU/edit)  
 # :computer: 프론트엔드 사전과제 결과물
 <img width="190" height="400" alt="스크린샷 2024-01-17 162711" src="https://github.com/monii/two-recruit-challenge/assets/26447328/a2bed17f-a31a-4791-a8cf-d61677941cab"></img>
 <img width="190" height="400" alt="스크린샷 2024-01-17 162309" src="https://github.com/monii/two-recruit-challenge/assets/26447328/5962624b-b2a6-4254-9586-279ef1416d19"></img>
