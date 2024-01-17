@@ -17,6 +17,7 @@
 * Styled-component
 * json-server
 * axios
+* 크롬의 모바일 웹 `iphone 12pro`를 기준으로 작업 하였습니다.
 # :pencil2: 로컬에서 실행 방법
 1. `package.json`에 설치된 라이브러리를 다운받기 위해서 아래의 명령어를 실행해 주세요.
     ```
