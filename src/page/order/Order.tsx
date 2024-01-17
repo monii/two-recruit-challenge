@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Header from "../../components/header/Header";
 import OrderButton from "./components/OrderButton";
 import itemApi from "../../api/api";
