@@ -13,7 +13,7 @@ const Counter = ({ id, price }: ItemCounter) => {
   const count = currentItem ? currentItem.count : 0;
 
   const addItem = () => {
-    count < 1000
+    count < 999
       ? increase({ id, price, count })
       : alert("주문할 수 있는 최대 수량은 999개 입니다.");
   };
