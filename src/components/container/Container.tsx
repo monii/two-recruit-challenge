@@ -11,7 +11,7 @@ const Container = ({ children }: ContianerProps) => {
 export default Container;
 
 const Style = {
-  Container: styled.div`
+  Container: styled.main`
     max-width: 480px;
     margin: 0 auto;
     background-color: #fff;
