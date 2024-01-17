@@ -12,6 +12,7 @@ interface Orders {
   totalItemCount: number;
   increase: (orderItem: Order) => void;
   decrease: (orderItem: Order) => void;
+  reset: ()=>void;
 }
 
 const initialOrders = {
@@ -62,6 +63,7 @@ const useOrdersStore = create<Orders>((set) => ({
         };
       }
     }),
+    reset: () => set(()=> initialOrders)
 }));
 
 export default useOrdersStore;
