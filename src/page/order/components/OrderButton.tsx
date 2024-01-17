@@ -4,16 +4,23 @@ import { convertToCurrency } from "../../../utils/utils";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+const ERORR_ITEM_ID = "32843-3";
+
 const OrderButton = () => {
   const navigate = useNavigate();
-  const { totalAmount, totalItemCount } = useOrdersStore();
+  const { orders, totalAmount, totalItemCount } = useOrdersStore();
   const [buttonText, setButtonText] = useState("주문하기");
   const pushOrder = () => {
     if (totalItemCount === 0)
       return alert("주문 아이템의 합계 수량이 0일 때는 주문할 수 없습니다.");
     setButtonText("로딩중...");
     setTimeout(() => {
-      navigate("/complete");
+      const findErrorItem = orders.find((item) => item.id === ERORR_ITEM_ID);
+      if (findErrorItem) {
+        navigate("/error");
+      } else {
+        navigate("/complete");
+      }
     }, 1500);
   };
 
