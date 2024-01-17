@@ -12,7 +12,7 @@ interface Orders {
   totalItemCount: number;
   increase: (orderItem: Order) => void;
   decrease: (orderItem: Order) => void;
-  reset: ()=>void;
+  reset: () => void;
 }
 
 const initialOrders = {
@@ -45,7 +45,7 @@ const useOrdersStore = create<Orders>((set) => ({
         };
       }
     }),
-    decrease: (newOrder: Order) =>
+  decrease: (newOrder: Order) =>
     set((state) => {
       const orderIndex = state.orders.findIndex(
         (order) => order.id === newOrder.id
@@ -54,16 +54,26 @@ const useOrdersStore = create<Orders>((set) => ({
       if (orderIndex === -1) {
         return state;
       } else {
-        const updatedOrders = [...state.orders];
+        let updatedOrders = [...state.orders];
         updatedOrders[orderIndex].count -= 1;
+        if (updatedOrders[orderIndex].count === 0) {
+          const frontUpdateOrders = updatedOrders.slice(0, orderIndex);
+          const backUpdateOrders = updatedOrders.slice(orderIndex + 1);
+          updatedOrders = [...frontUpdateOrders, ...backUpdateOrders];
+        }
+
         return {
           orders: updatedOrders,
-          totalItemCount: state.totalItemCount > 0 ? state.totalItemCount - 1 : 0,
-          totalAmount: state.totalAmount > newOrder.price ? state.totalAmount - newOrder.price : 0,
+          totalItemCount:
+            state.totalItemCount > 0 ? state.totalItemCount - 1 : 0,
+          totalAmount:
+            state.totalAmount > newOrder.price
+              ? state.totalAmount - newOrder.price
+              : 0,
         };
       }
     }),
-    reset: () => set(()=> initialOrders)
+  reset: () => set(() => initialOrders),
 }));
 
 export default useOrdersStore;
