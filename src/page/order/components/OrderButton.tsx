@@ -10,6 +10,7 @@ const OrderButton = () => {
   const navigate = useNavigate();
   const { orders, totalAmount, totalItemCount } = useOrdersStore();
   const [buttonText, setButtonText] = useState("주문하기");
+  
   const pushOrder = () => {
     if (totalItemCount === 0)
       return alert("주문 아이템의 합계 수량이 0일 때는 주문할 수 없습니다.");
